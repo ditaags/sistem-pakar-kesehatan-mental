@@ -1,0 +1,68 @@
+{
+    "totalRecords": 500,
+    "correctPredictions": 140,
+    "accuracy": 28,
+    "confusionMatrix": {
+        "K01": {
+            "K01": 43,
+            "K02": 63,
+            "K03": 19,
+            "K04": 0
+        },
+        "K02": {
+            "K01": 39,
+            "K02": 79,
+            "K03": 17,
+            "K04": 0
+        },
+        "K03": {
+            "K01": 28,
+            "K02": 78,
+            "K03": 18,
+            "K04": 0
+        },
+        "K04": {
+            "K01": 28,
+            "K02": 76,
+            "K03": 12,
+            "K04": 0
+        }
+    },
+    "classMetrics": {
+        "K01": {
+            "totalActual": 125,
+            "totalPredicted": 138,
+            "truePositive": 43,
+            "precision": 31.16,
+            "recall": 34.4
+        },
+        "K02": {
+            "totalActual": 135,
+            "totalPredicted": 296,
+            "truePositive": 79,
+            "precision": 26.69,
+            "recall": 58.52
+        },
+        "K03": {
+            "totalActual": 124,
+            "totalPredicted": 66,
+            "truePositive": 18,
+            "precision": 27.27,
+            "recall": 14.52
+        },
+        "K04": {
+            "totalActual": 116,
+            "totalPredicted": 0,
+            "truePositive": 0,
+            "precision": 0,
+            "recall": 0
+        }
+    },
+    "limitationsAnalysis": [
+        "Distribusi fitur numerik (Mood, Sleep, Stress, Severity, Physical Activity) di dataset hampir identik pada 4 kelompok diagnosis (selisih rata-rata < 0.3 poin skala 1-10).",
+        "Probabilitas kemunculan fitur P(E|H) hanya berselisih 8% - 18% antar kelas, mendekati distribusi seragam acak (random uniform distribution).",
+        "Dataset publik Kaggle ini berkarakteristik data sintetis buatan (simulasi) dan tidak mencerminkan data rekam medis klinis nyata di rumah sakit.",
+        "Menurunkan nilai CF murni dari dataset ini akan menghasilkan nilai bobot yang hampir sama untuk semua penyakit sehingga tidak mampu membedakan diagnosis.",
+        "Solusi akademik yang dapat dipertanggungjawabkan: Menggunakan Pendekatan Hibrida, di mana basis aturan dan bobot CF utama diturunkan dari literatur diagnosis klinis (DSM-5 & PPDGJ III), sedangkan dataset digunakan untuk validasi ambang numerik deskriptif dan analisis keterbatasan sistem."
+    ]
+}
